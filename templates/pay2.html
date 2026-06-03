@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Payment Page</title>
+
+
+<style>
+
+/* ================= BODY ================= */
+
+body{
+
+    margin:0;
+  
+    padding:0;
+
+    font-family:Arial, sans-serif;
+
+    background:linear-gradient(to bottom,#edf2fb,#dfe8f7);
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    width:100%;
+    height:75px;
+    background:#001f4d;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    padding:0 25px;
+
+    overflow:hidden;
+}
+
+/* LOGO SECTION */
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    width:240px;
+}
+
+/* FIX HUGE LOGO */
+
+.logo-section img{
+    width:45px;
+    height:45px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+/* BRAND NAME */
+
+.brand-name{
+    color:white;
+    font-size:18px;
+    font-weight:700;
+    white-space:nowrap;
+}
+
+/* CENTER LINKS */
+
+.nav-links{
+    flex:1;
+    flex-wrap:wrap;
+    display:flex;
+    justify-content:center;
+    gap:14px;
+}
+
+/* LINKS */
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:14px;
+    font-weight:500;
+    white-space:nowrap;
+}
+
+/* SEARCH BAR RIGHT */
+
+.search-box{
+    width:250px;
+    background:white;
+    border-radius:25px;
+    padding:8px 15px;
+    margin-right:5%;
+}
+
+.search-box input{
+    width:100%;
+    border:none;
+    outline:none;
+    font-size:14px;
+}
+.nav-btn{
+
+    background:#001f4d;
+    color:white;
+    border:none;
+    padding:10px 24px;
+    border-radius:15px;
+    cursor:pointer;
+    font-weight:bolder;
+    width:80px;
+     height:40px;
+     font-size:large;
+     margin-top:0.1%;
+}
+
+
+/* ================= PAGE ================= */
+
+.payment-page{
+
+    width:100%;
+   font-size:larger;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding-top:6px;
+}
+
+
+/* ================= PAYMENT BOX ================= */
+
+.payment-box{
+
+    width:35%;
+    background:white;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+
+}
+
+
+/* TITLE */
+
+.payment-title{
+
+    text-align:center;
+    color:#001f4d;
+    margin-bottom:10px;
+    margin-right:15%;
+}
+
+.payment-subtitle{
+
+    text-align:center;
+
+    color:#666;
+
+    margin-bottom:30px;
+}
+
+
+/* DETAILS */
+
+.payment-details{
+
+    background:#f5f8ff;
+
+    padding:20px;
+
+    border-radius:10px;
+
+    margin-bottom:25px;
+}
+
+.payment-details p{
+
+    margin:12px 0;
+}
+
+.payment-details span{
+
+    color:#001f4d;
+
+    font-weight:bold;
+}
+
+
+/* INPUT */
+
+.payment-input{
+
+    width:100%;
+
+    padding:13px;
+
+    border:1px solid #ccd7f0;
+
+    border-radius:8px;
+
+    box-sizing:border-box;
+
+    margin-bottom:20px;
+
+    outline:none;
+}
+
+
+/* BUTTON */
+
+.pay-btn{
+
+    width:100%;
+
+    background:linear-gradient(to right,#001f4d,#001f4d);
+
+    color:white;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    cursor:pointer;
+
+    font-weight:bold;
+}
+
+
+/* MESSAGE */
+
+.message{
+
+    text-align:center;
+
+    margin-top:18px;
+
+    font-weight:bold;
+}
+/* SMALL SCREENS */
+
+@media(max-width:1000px){
+
+    .navbar{
+        height:auto;
+        padding:15px;
+        gap:15px;
+    }
+
+    .logo-section{
+        width:auto;
+    }
+
+    .nav-links{
+        width:100%;
+        justify-content:center;
+    }
+
+    .search-box{
+        width:100%;
+        max-width:250px;
+        margin:auto;
+    }
+}
+/* Main Footer Section */
+
+.info-section{
+    width: 100%;
+    background-color: #001f4d;
+    padding: 50px 20px;
+    margin-top: 60px;
+    color: white;
+}
+
+/* 3 Column Layout */
+
+.info-box{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* Individual Cards */
+
+.info-card{
+    flex: 1;
+    min-width: 250px;
+    background-color: #002b66;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight:500;
+}
+
+.info-card h2{
+    margin-bottom: 15px;
+    font-size: 26px;
+    color: white;
+
+}
+
+.info-card p{
+    font-size: 16px;
+    color: white;
+    font-weight:500;
+    line-height: 2;
+}
+
+/* Bottom Footer */
+
+.footer-bottom{
+    text-align: center;
+    margin-top: 35px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.3);
+    font-weight:500;
+}
+
+.footer-bottom p{
+    color: white;
+    font-size: 14px;
+    font-weight:500;
+}
+h1{
+    margin-top: 20px;
+    margin-left: 60px;
+   margin-bottom: 40px;
+   font-size: 55px;
+    color: #001f4d;
+
+}
+   
+h4{
+     margin-bottom: 15px;
+    font-size: 16px;
+    color: white;
+
+}
+*{
+    box-sizing:border-box;
+}
+
+html,body{
+    overflow-x:hidden;
+    max-width:100%;
+}
+
+</style>
+
+</head>
+
+<body>
+    
+
+<nav class="navbar">
+
+    <div class="logo-section">
+        <img src="logo.png">
+        <div class="brand-name">Code Academy</div>
+    </div>
+
+    <div class="nav-links">
+       <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+          <a href="content.html">Content</a>
+       <a href="account.html">Account</a>
+        <a href="leaderboard.html">Leaderboard</a>
+          <a href="feedback.html">Feedback</a>
+           <a href="sign.html">Sign out</a>
+    </div>
+
+  <div class="search-box">
+
+    <input type="text" id="searchInput" placeholder="Search">
+
+</div>
+
+</nav>
+<div>       <a href="video1.html"><button class="nav-btn">
+
+        Back
+
+    </button>
+    </a>
+</div>
+
+
+
+<!-- ================= PAYMENT PAGE ================= -->
+
+<div class="payment-page">
+
+    <div class="payment-box">
+
+
+        <h1 class="payment-title">
+
+            Complete Payment
+
+        </h1>
+
+
+        <p class="payment-subtitle">
+
+            Pay to unlock your certificate
+
+        </p>
+
+
+
+        <!-- DETAILS -->
+
+        <div class="payment-details">
+
+            <p>
+                Student Name :
+                <span id="studentName">Student</span>
+            </p>
+
+            <p>
+
+                Course :
+                <span>HTML Development</span>
+
+            </p>
+
+            <p>
+
+                Amount :
+                <span>$50</span>
+
+            </p>
+
+            <p>
+
+                Method :
+                <span> EasyPaisa</span>
+
+            </p>
+            <p> Account number:
+                030000000000
+            </p>
+
+        </div>
+
+
+
+        <!-- INPUT -->
+
+        <input type="text"
+
+        id="transaction"
+
+        placeholder="Enter Transaction ID"
+
+        class="payment-input">
+
+
+
+        <!-- BUTTON -->
+
+        <button class="pay-btn"
+
+        onclick="verifyPayment()">
+
+            Verify Payment
+
+        </button>
+
+
+
+        <!-- MESSAGE -->
+
+        <p id="message"
+
+        class="message"></p>
+
+
+    </div>
+
+</div>
+  <!-- Trifold Footer Section -->
+
+<footer class="info-section">
+
+    <div class="info-box">
+
+        <!-- About -->
+        <div class="info-card">
+            <h2>About Us</h2>
+            <p>
+               Welcome to MARENA-HUB, your ultimate companion in mastering modern programming languages 
+               and web technologies. Whether you are taking your first steps into coding with HTML and CSS,
+                or diving deep into logic with Python and JavaScript, we provide the path to clear, structured mastery.
+                We focus on delivering quality educational content with a modern and user-friendly interface.
+            </p>
+        </div>
+
+        <!-- Platform -->
+        <div class="info-card">
+            <h2>Platform Info</h2>
+            <p>
+              The main objective  of this website is to deliver quality educational content in a simple and understandable way.
+             The website is built with a modern and responsive design to ensure a smooth experience on both desktop and mobile devices. 
+             It focuses on user-friendly navigation, attractive layouts, and efficient performance. Our goal is to make learning accessible, 
+             engaging, and effective for everyone.
+            </p>
+        </div>
+
+        <!-- Makers -->
+        <div class="info-card">
+            <h2>Help</h2>
+            <p>For help contact us on this Email
+                address or use contact number given below: </p>
+                <div>
+                    <br>
+                    <br>
+            <h4>Email : "Marena-hub@outlook.com"
+                </h4>
+             </div>
+             <br>
+            <br>
+            <h4>Contact number : +923428826227</h4>
+            <br>
+            <a href="Contact.html"
+            class = "next-btn"><h4>Contact us :</h4><p style="font-style:italic;" >CLICK</p></a>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2026 LearnHub Platform | All Rights Reserved</p>
+    </div>
+
+</footer>
+
+
+
+<script>
+
+/* ================= PAYMENT FUNCTION ================= */
+
+function verifyPayment(){
+
+    let transactionID =
+
+    document.getElementById("transaction").value;
+
+    let message =
+
+    document.getElementById("message");
+
+
+    /* EMPTY */
+
+    if(transactionID == ""){
+
+        message.innerHTML =
+
+        "Please pay to unlock certificate";
+
+        message.style.color = "red";
+    }
+
+    else{
+
+        /* SAVE PAYMENT */
+        
+        localStorage.setItem(
+        "payment",
+        "paid"
+        );
+
+        /* SUCCESS */
+
+        message.innerHTML =
+
+        "Payment Verified Successfully";
+
+        message.style.color = "green";
+
+
+        /* OPEN CERTIFICATE PAGE */
+
+        setTimeout(function(){
+
+            let form = document.createElement("form");
+            form.method = "POST";
+            form.action = "/verify-payment/html";
+            let input = document.createElement("input");
+            input.type = "hidden";
+            input.name = "transaction";
+            input.value = transactionID;
+            form.appendChild(input);
+            document.body.appendChild(form);
+            form.submit();
+
+        },1500);
+    }
+
+}
+/* SEARCH FUNCTION */
+
+function performSearch(){
+
+    let value =
+    document
+    .getElementById("searchInput")
+    .value
+    .toLowerCase();
+
+      /* SEARCH PAGES */
+    if(value.includes("home")){
+        window.location.href = "home.html";
+    }
+    if(value.includes("content")){
+        window.location.href = "content.html";
+    }
+
+    if(value.includes("python")){
+        window.location.href = "video1.html";
+    }
+
+    else if(value.includes("html")){
+        window.location.href = "video2.html";
+    }
+
+    else if(value.includes("javascript")){
+        window.location.href = "video3.html";
+    }
+    else if(value.includes("css")){
+        window.location.href = "video4.html";
+    }
+
+    if(value.includes("learderboard")){
+        window.location.href = "leaderboard.html";
+    }
+
+    else if(value.includes("certificate")){
+        window.location.href = "certificate.html";
+    }
+    if(value.includes("feedback")){
+        window.location.href = "feedback.html";
+    }
+     if(value.includes("account")){
+        window.location.href = "account.html";
+    }
+    if(value.includes("contact")){
+        window.location.href = "contact.html";
+    }
+
+    if(value.includes("about")){
+        window.location.href = "about.html";
+    }
+
+    else{
+        alert("Page not found");
+    }
+}
+
+/* ENTER KEY SEARCH */
+
+document
+.getElementById("searchInput")
+
+.addEventListener("keypress", function(event){
+
+    if(event.key === "Enter"){
+        performSearch();
+    }
+
+});
+
+let savedName = localStorage.getItem("studentName");
+
+document.getElementById("studentName").innerHTML = savedName;
+
+
+
+
+</script>
+
+</body>
+</html>
