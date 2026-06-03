@@ -1,0 +1,7 @@
+Amna,5
+Amna,3
+abc,10
+hira,25
+None,4
+ad,12
+ad,9
