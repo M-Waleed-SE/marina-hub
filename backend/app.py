@@ -990,6 +990,14 @@ def fallback(filename):
         if os.path.exists(template_path):
             return render_template(filename)
 
+        # Linux file system is case-sensitive, so resolve common casing variants.
+        templates_dir = os.path.join(PROJECT_DIR, 'templates')
+        if os.path.isdir(templates_dir):
+            lower_filename = filename.lower()
+            for entry in os.listdir(templates_dir):
+                if entry.lower() == lower_filename:
+                    return render_template(entry)
+
     # Check if it's a static file (CSS, images, etc.)
     static_path = os.path.join(PROJECT_DIR, 'static', filename)
     if os.path.exists(static_path):
